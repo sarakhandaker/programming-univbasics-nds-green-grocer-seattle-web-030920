@@ -85,7 +85,7 @@ def total_cart(cart)
   i=0
   total=0
   while i<cart.length
-  total+=cart[i][:price]
+  total+=cart[i][:price]*cart[i][:count]
   i+=1
 end
 total=total*0.9 if total>100.0
