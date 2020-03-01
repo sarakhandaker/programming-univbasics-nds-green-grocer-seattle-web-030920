@@ -48,9 +48,8 @@ def apply_coupons(cart, coupons)
           newc[-1][:count]=coupons[x][:num]
           newc<< cart[i]
           newc[-1][:count]=cart[i][:count]-coupons[x][:num]
-            if newc[-1][:count]<=0
-              newc.delete_at(-1)
-            end
+        else
+           
         end
     end
     i+=1
