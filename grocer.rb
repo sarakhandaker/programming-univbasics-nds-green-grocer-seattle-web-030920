@@ -50,7 +50,7 @@ def apply_coupons(cart, coupons)
   #    newc<< cart[i]
  
  #if newc[-1][:count] > coupons[x][:num]
-  # newc[-1][:item]
+  # newc[-1][:item]+= " W/ COUPON"
   # newc[-1][:price]=coupons[x][:cost]/ coupons[x][:num]
     #newc[-1][:count]=coupons[x][:num]
     # newc<< cart[i]
@@ -63,7 +63,6 @@ def apply_coupons(cart, coupons)
  # end
 #end
 #  newc
-end
 end
 
 def apply_clearance(cart)
