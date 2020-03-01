@@ -42,7 +42,9 @@ def apply_coupons(cart, coupons)
   while i<cart.length
     if find_index_number(coupons, cart[i][:item])
        x= find_index_number(coupons, cart[i][:item])
-       newc<< cart[i]
+       p={}
+       p[:item]=cart[i][:item]
+       newc<< p
        if newc[-1][:count] > coupons[x][:num]
           newc[-1][:item]+= " W/COUPON"
           newc[-1][:price]=coupons[x][:cost]/ coupons[x][:num]
