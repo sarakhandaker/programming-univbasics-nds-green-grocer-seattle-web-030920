@@ -64,6 +64,7 @@ def apply_coupons(cart, coupons)
 #end
 #  newc
 end
+end
 
 def apply_clearance(cart)
   i=0
