@@ -64,6 +64,9 @@ def apply_coupons(cart, coupons)
           newc[-1][:price]=coupons[x][:cost]/ coupons[x][:num]
           newc[-1][:count]=coupons[x][:num]
         end
+        
+    else
+       newc<< cart[i]
     end
     i+=1
   end
