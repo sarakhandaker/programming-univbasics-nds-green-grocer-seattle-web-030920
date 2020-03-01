@@ -48,17 +48,26 @@ def apply_coupons(cart, coupons)
        p[:price]=cart[i][:price]
        p[:clearance]=cart[i][:clearance]
        newc<< p
-       if newc[-1][:count] > coupons[x][:num]
+       if newc[-1][:count] >= coupons[x][:num]
           newc[-1][:item]+= " W/COUPON"
           newc[-1][:price]=coupons[x][:cost]/ coupons[x][:num]
           newc[-1][:count]=coupons[x][:num]
           
           newc<< cart[i]
           cart[i][:count]=cart[i][:count]-coupons[x][:num]
-        else newc[-1][:count] == coupons[x][:num]
-          newc[-1][:item]+= " W/COUPON"
-          newc[-1][:price]=coupons[x][:cost]/ coupons[x][:num]
-          newc[-1][:count]=coupons[x][:num]
+      #   else newc[-1][:count] == coupons[x][:num]
+          
+      #     q={}
+      # q[:item]=cart[i][:item]
+      # q[:count]=cart[i][:count]
+      # q[:price]=cart[i][:price]
+      # q[:clearance]=cart[i][:clearance]
+      #     newc<< q
+      #     newc[-1][:item]+= "W/COUPON"
+      #     newc[-1][:price]=coupons[x][:cost]/ coupons[x][:num]
+      #     newc[-1][:count]=coupons[x][:num]
+          
+      #     newc>>cart[i][:count
         end
         
     else
