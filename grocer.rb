@@ -38,6 +38,7 @@ end
 
 def apply_coupons(cart, coupons)
   i=0
+  newc=[]
   while i<cart.length
     if find_index_number(coupons, cart[i][:item])
        x= find_index_number(coupons, cart[i][:item])
