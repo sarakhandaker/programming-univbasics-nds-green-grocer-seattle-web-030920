@@ -54,12 +54,10 @@ def apply_coupons(cart, coupons)
           newc[-1][:count]=coupons[x][:num]
           q={}
           q[:item]=cart[i][:item]
-          q[:count]=cart[i][:count]
+          q[:count]=cart[i][:count]-coupons[x][:num]
           q[:price]=cart[i][:price]
           q[:clearance]=cart[i][:clearance]
-          binding.pry
           newc<< q
-          newc[-1][:count]=cart[i][:count]-coupons[x][:num]
         else newc[-1][:count] == coupons[x][:num]
           newc[-1][:count] > coupons[x][:num]
           newc[-1][:item]+= " W/COUPON"
