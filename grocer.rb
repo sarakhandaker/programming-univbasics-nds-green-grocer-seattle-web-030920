@@ -44,13 +44,16 @@ def apply_coupons(cart, coupons)
        x= find_index_number(coupons, cart[i][:item])
        p={}
        p[:item]=cart[i][:item]
+       p[:count]=cart[i][:count]
+       p[:price]=cart[i][:price]
+       p[:clearance]=cart[i][:clearance]
        newc<< p
        if newc[-1][:count] > coupons[x][:num]
           newc[-1][:item]+= " W/COUPON"
           newc[-1][:price]=coupons[x][:cost]/ coupons[x][:num]
           newc[-1][:count]=coupons[x][:num]
           binding.pry
-          newc<< cart[i]
+          newc<< p
           newc[-1][:count]=cart[i][:count]-coupons[x][:num]
         else newc[-1][:count] == coupons[x][:num]
           newc[-1][:count] > coupons[x][:num]
