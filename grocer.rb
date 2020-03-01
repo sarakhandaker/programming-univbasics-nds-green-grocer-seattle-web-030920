@@ -39,30 +39,23 @@ end
 def apply_coupons(cart, coupons)
   i=0
   while i<cart.length
-  
-  cart_item= find_item_by_name_in_collection(cart[i][:item], cart)
-  compound_item_name+="#{cart[i][:item]}"+" W/COUPON"
-  
-  
-  
-  #  if find_index_number(coupons, cart[i][:item])
-  #    x= find_index_number(coupons, cart[i][:item])
-  #    newc<< cart[i]
- 
- #if newc[-1][:count] > coupons[x][:num]
-  # newc[-1][:item]+= " W/COUPON"
-  # newc[-1][:price]=coupons[x][:cost]/ coupons[x][:num]
-    #newc[-1][:count]=coupons[x][:num]
-    # newc<< cart[i]
-     # newc[-1][:count]=cart[i][:count]-coupons[x][:num]
-     #   if newc[-1][:count]=<0
-    #   newc.delete_at(-1)
-    #     end
- #end
- #   i+=1
- # end
-#end
-#  newc
+    if find_index_number(coupons, cart[i][:item])
+       x= find_index_number(coupons, cart[i][:item])
+       newc<< cart[i]
+       if newc[-1][:count] > coupons[x][:num]
+          newc[-1][:item]+= " W/COUPON"
+          newc[-1][:price]=coupons[x][:cost]/ coupons[x][:num]
+          newc[-1][:count]=coupons[x][:num]
+          newc<< cart[i]
+          newc[-1][:count]=cart[i][:count]-coupons[x][:num]
+            if newc[-1][:count]<=0
+              newc.delete_at(-1)
+            end
+        end
+    end
+    i+=1
+  end
+  newc
 end
 
 def apply_clearance(cart)
