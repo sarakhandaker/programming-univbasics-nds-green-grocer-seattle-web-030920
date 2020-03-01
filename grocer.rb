@@ -63,7 +63,6 @@ def apply_coupons(cart, coupons)
           newc[-1][:item]+= " W/COUPON"
           newc[-1][:price]=coupons[x][:cost]/ coupons[x][:num]
           newc[-1][:count]=coupons[x][:num]
-          binding.pry
         end
     end
     i+=1
